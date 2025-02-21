@@ -1,0 +1,14 @@
+services:
+  dotnet:
+    build:
+      context: .
+      args:
+        DOTNET_VERSION: ${DOTNET_VERSION}
+    container_name: dotnet
+    env_file:
+      - .env
+    volumes:
+      - ./${NAME_APP}:/app
+    stdin_open: true
+    tty: true
+    command: ["tail", "-f", "/dev/null"]
