@@ -1,0 +1,10 @@
+services:
+  go:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: go-cli
+    volumes:
+      - ../:/app
+    stdin_open: true
+    tty: true
